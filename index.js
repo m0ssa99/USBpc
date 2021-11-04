@@ -524,8 +524,6 @@ async function startBotPlayMatch(page, myCards, quest, claimQuestReward, priorit
             const apiResponse = await withTimeout(100000, api.getPossibleTeams(matchDetails));
             if (apiResponse && !JSON.stringify(apiResponse).includes('api limit reached')) 
             {
-
-            if (apiResponse && !JSON.stringify(apiResponse).includes('api limit reached')) {
                 readline.cursorTo(process.stdout, 0); 
                 misc.writeToLog(chalk.magenta('API Response Result: ')); 
                 console.log(chalk.cyan(' Team picked by API: '));
