@@ -522,18 +522,10 @@ async function startBotPlayMatch(page, myCards, quest, claimQuestReward, priorit
        try 
         {
             const apiResponse = await withTimeout(100000, api.getPossibleTeams(matchDetails));
-//<<<<<<< HEAD
             if (apiResponse && !JSON.stringify(apiResponse).includes('api limit reached')) 
             {
-//=======
-            //while (JSON.stringify(apiResponse).includes('hash')) {
-                //misc.writeToLog('Waiting 30 seconds for API to calculate team...');
-                //misc.writeToLog('You have an option to update to V2 of this bot to make this faster: https://github.com/PCJones/Ultimate-Splinterlands-Bot-V2');
-                //await sleep(30000);
-                //apiResponse = await api.getPossibleTeams(matchDetails);
-            //}
-            //if (apiResponse && !JSON.stringify(apiResponse).includes('api limit reached')) {
-//>>>>>>> a2e097988f17c7c2242d3ff1e20f4af607b909ee
+
+            if (apiResponse && !JSON.stringify(apiResponse).includes('api limit reached')) {
                 readline.cursorTo(process.stdout, 0); 
                 misc.writeToLog(chalk.magenta('API Response Result: ')); 
                 console.log(chalk.cyan(' Team picked by API: '));
